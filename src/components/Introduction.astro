@@ -32,7 +32,7 @@ const { title, body } = Astro.props;
                     class="self-start rounded-3xl border-2 border-custom-redLight py-2 pl-2 pr-0"
                 >
                     MORE ABOUT ME
-                    <span class="bg-custom-redLight p-3 rounded-full">
+                    <span class="arrow-container bg-custom-redLight p-3 rounded-full">
                         <svg
                         class="arrow w-5 inline-block fill-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const { title, body } = Astro.props;
 </main>
 
 <style>
-    .arrow:hover {
+    .arrow-container:hover .arrow {
         animation: moverse 1 .7s both;
     }
 
