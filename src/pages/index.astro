@@ -10,13 +10,13 @@ import EN from "../../public/languages/en.html";
 <Layout title="Carlos Miguel" className="font-body bg-[url('../../fondo.webp')] bg-no-repeat bg-cover">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
-            <EN />
+            <EN slot="svg" />
         </NavbarLanguage>
         <NavbarElement
             slot="pages"
             title="Home"
             href="/"
-            className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+            className="block py-2 px-3 text-stone-200 bg-gradient-to-r from-cyan-500 to-blue-500 rounded md:bg-gradient-to-r md:from-cyan-500 md:to-blue-500 md:bg-clip-text md:text-transparent md:p-0"
         />
         <NavbarElement slot="pages" title="Projects" href="./index.html" />
         <NavbarElement slot="pages" title="About" href="" />
