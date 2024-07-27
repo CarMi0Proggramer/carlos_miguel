@@ -7,7 +7,7 @@ import NavbarLanguage from "../../src/components/NavbarLanguage.astro";
 import EN from "../../public/languages/en.html";
 ---
 
-<Layout title="Carlos Miguel">
+<Layout title="Carlos Miguel" className="font-body bg-[url('../../fondo.webp')] bg-no-repeat bg-cover">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
             <EN />
@@ -30,7 +30,7 @@ import EN from "../../public/languages/en.html";
 
     <style>
         body {
-            height: 100dvh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
         }
