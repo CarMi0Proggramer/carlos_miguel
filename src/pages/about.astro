@@ -1,38 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Introduction from "../components/Introduction.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
 import EN from "../components/flags/en.astro";
 ---
 
-<Layout title="Carlos Miguel" className="bg-[url('../../images/fondo.webp')] bg-no-repeat bg-cover">
+<Layout title="About">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
             <EN slot="svg" />
         </NavbarLanguage>
+        <NavbarElement slot="pages" title="Home" href="/" />
         <NavbarElement
             slot="pages"
-            title="Home"
-            href="/"
+            title="About"
+            href="/about"
             className="block py-2 px-3 text-stone-200 bg-gradient-to-r from-cyan-500 to-blue-500 rounded md:bg-gradient-to-r md:from-cyan-500 md:to-blue-500 md:bg-clip-text md:text-transparent md:p-0"
         />
-        <NavbarElement slot="pages" title="About" href="/about" />
         <NavbarElement slot="pages" title="Projects" href="/projects" />
         <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
-    <Introduction
-        title="FullStack Web Developer"
-        ,
-        body="I’m a Full Stack Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
-    />
-
-    <style>
-        body {
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
 </Layout>
