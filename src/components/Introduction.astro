@@ -34,7 +34,7 @@ const { title, body } = Astro.props;
                     MORE ABOUT ME
                     <span class="bg-custom-redLight p-3 rounded-full">
                         <svg
-                        class="w-5 inline-block fill-white"
+                        class="arrow w-5 inline-block fill-white"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 -960 960 960"
                         ><path
@@ -48,4 +48,19 @@ const { title, body } = Astro.props;
     </section>
 </main>
 
-<style></style>
+<style>
+    .arrow:hover {
+        animation: moverse 1 .7s both;
+    }
+
+    @keyframes moverse {
+        from {
+            opacity: .7;
+            translate: 0 0;
+        }
+        to {
+            opacity: 1;
+            translate: 3px 0;
+        }
+    }
+</style>
