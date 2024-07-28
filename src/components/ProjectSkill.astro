@@ -1,0 +1,25 @@
+---
+interface Props {
+    skillData: SkillData
+}
+
+const { name, path } = Astro.props.skillData;
+const id = crypto.randomUUID();
+
+---
+
+<div class="hover:bg-slate-300 p-2 hover:rounded-lg grid place-content-center">
+    <img class="size-8 object-contain object-center"
+        data-tooltip-target={id}
+        src={path}
+        alt="Used tool"
+    />
+    <div
+        id={id}
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+    >
+        {name}
+        <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+</div>

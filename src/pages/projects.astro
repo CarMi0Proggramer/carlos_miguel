@@ -4,9 +4,10 @@ import Navbar from "../components/Navbar.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
 import EN from "../components/flags/en.astro";
+import ProjectsContainer from "../components/Projects.astro";
 ---
 
-<Layout title="About">
+<Layout title="Projects"   className="bg-[url('../../images/fondo.webp')] bg-no-repeat bg-cover">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
             <EN slot="svg" />
@@ -21,4 +22,5 @@ import EN from "../components/flags/en.astro";
         />
         <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
+    <ProjectsContainer />
 </Layout>
