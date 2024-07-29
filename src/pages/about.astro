@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
 import EN from "../components/flags/en.astro";
+import AboutMe from "../components/About.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="About">
@@ -21,4 +23,6 @@ import EN from "../components/flags/en.astro";
         <NavbarElement slot="pages" title="Projects" href="/projects" />
         <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
+    <AboutMe />
+    <Footer />
 </Layout>

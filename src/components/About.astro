@@ -1,0 +1,118 @@
+---
+import LearnedSkill from "./Skill.astro";
+
+const learnedSkills: SkillData[] = [
+    {
+        name: "HTML5",
+        path: "../../svgs/html.svg",
+    },
+    {
+        name: "CSS3",
+        path: "../../svgs/css.svg",
+    },
+    {
+        name: "JavaScript",
+        path: "../../svgs/javascript.svg",
+    },
+    {
+        name: "TypeScript",
+        path: "../../svgs/typescript.svg",
+    },
+    {
+        name: "Node.js",
+        path: "../../svgs/nodejs.svg",
+    },
+    {
+        name: "Express.js",
+        path: "../../svgs/express.svg",
+    },
+    {
+        name: "Vite.js",
+        path: "../../svgs/Vite.js.svg",
+    },
+    {
+        name: "Git",
+        path: "../../svgs/Git.svg",
+    },
+    {
+        name: "TailwindCSS",
+        path: "../../svgs/tailwindcss.svg",
+    },
+    {
+        name: "PostgreSQL",
+        path: "../../svgs/postgresql.svg",
+    },
+    {
+        name: "TypeORM",
+        path: "../../svgs/typeorm.svg",
+    },
+    {
+        name: "Astro",
+        path: "../../svgs/astro.svg",
+    },
+];
+---
+
+<main class="flex flex-col items-center justify-center">
+    <section class="mt-5 gap-4 max-w-screen-lg w-full md:w-3/4 px-3 md:px-0">
+        <div class="flex w-full justify-center">
+            <h1
+                class="text-3xl font-extrabold border-b-2 border-custom-redLight w-fit"
+            >
+                ABOUT <span class="text-custom-redLight">ME</span>
+            </h1>
+        </div>
+        <div class="flex flex-col gap-1 p-3 text-left text-gray-600">
+            <p>
+                Hi, my name is Carlos Miguel, I'm 18 years old and for the past
+                half year I've been learning programming self-taught from online
+                courses, reading a lot of books and <span
+                    class="text-custom-redLight"
+                >
+                    documentation of the technologies I've used</span
+                >.
+            </p>
+            <p>
+                I consider myself a very fast learner, which is reflected in the
+                projects I have developed that started only with <span
+                    class="text-custom-redLight"
+                    >HTML5, CSS3, JavaScript and Node.js</span
+                > and forced me to expand my skills and knowledge.
+            </p>
+            <p>
+                I put a lot of effort into what I do to create not only
+                high-quality software, but also scalable and maintainable code.
+                For example, in the API I developed for my e-commerce project, I
+                used the <span class="text-custom-redLight"
+                    >MVC (Model-View-Controller) architecture pattern</span
+                >. This pattern allowed me to organize the code in a structured
+                and modular way, separating the business logic, the user
+                interface, and the flow control and application logic.
+            </p>
+            <p>
+                If you are interested in collaborating or just want to know more
+                about my work, do not hesitate to contact me through <a
+                    href="mailto:carlosmiguelgarcesbasulto@gmail.com"
+                    target="_blank"
+                    class="text-custom-redLight underline"
+                    >carlosmiguelgarcesbasulto@gmail.com</a
+                > or <a
+                    href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D"
+                    target="_blank"
+                    class="text-custom-redLight underline"
+                    >my LinkedIn profile</a
+                >.
+            </p>
+        </div>
+        <div class="flex flex-col p-3 gap-2">
+            <h2 class="font-extrabold text-black">MY SKILLS:</h2>
+            <div class="flex gap-2">
+                {
+                    learnedSkills.map((skill) => (
+                        <LearnedSkill skillData={skill} />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</main>
