@@ -8,7 +8,7 @@ import ProjectsContainer from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Projects"   className="bg-[url('../../images/fondo.webp')] bg-no-repeat bg-cover">
+<Layout title="Projects">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
             <EN slot="svg" />
@@ -21,7 +21,6 @@ import Footer from "../components/Footer.astro";
             href="/projects"
             className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
         />
-        <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
     <ProjectsContainer />
     <Footer />

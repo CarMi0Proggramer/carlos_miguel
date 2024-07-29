@@ -4,57 +4,57 @@ import LearnedSkill from "./Skill.astro";
 const learnedSkills: SkillData[] = [
     {
         name: "HTML5",
-        path: "../../svgs/html.svg",
+        path: "/svgs/html.svg",
     },
     {
         name: "CSS3",
-        path: "../../svgs/css.svg",
+        path: "/svgs/css.svg",
     },
     {
         name: "JavaScript",
-        path: "../../svgs/javascript.svg",
+        path: "/svgs/javascript.svg",
     },
     {
         name: "TypeScript",
-        path: "../../svgs/typescript.svg",
+        path: "/svgs/typescript.svg",
     },
     {
         name: "Node.js",
-        path: "../../svgs/nodejs.svg",
+        path: "/svgs/nodejs.svg",
     },
     {
         name: "Express.js",
-        path: "../../svgs/express.svg",
+        path: "/svgs/express.svg",
     },
     {
         name: "Vite.js",
-        path: "../../svgs/Vite.js.svg",
+        path: "/svgs/Vite.js.svg",
     },
     {
         name: "Git",
-        path: "../../svgs/Git.svg",
+        path: "/svgs/Git.svg",
     },
     {
         name: "TailwindCSS",
-        path: "../../svgs/tailwindcss.svg",
+        path: "/svgs/tailwindcss.svg",
     },
     {
         name: "PostgreSQL",
-        path: "../../svgs/postgresql.svg",
+        path: "/svgs/postgresql.svg",
     },
     {
         name: "TypeORM",
-        path: "../../svgs/typeorm.svg",
+        path: "/svgs/typeorm.svg",
     },
     {
         name: "Astro",
-        path: "../../svgs/astro.svg",
+        path: "/svgs/astro.svg",
     },
 ];
 ---
 
 <main class="flex flex-col items-center justify-center">
-    <section class="mt-5 gap-4 max-w-screen-lg w-full md:w-3/4 px-3 md:px-0">
+    <section class="mt-5 gap-4 max-w-screen-lg sm:w-3/4 px-4 sm:px-0">
         <div class="flex w-full justify-center">
             <h1
                 class="text-3xl font-extrabold border-b-2 border-custom-redLight w-fit"
@@ -62,7 +62,7 @@ const learnedSkills: SkillData[] = [
                 ABOUT <span class="text-custom-redLight">ME</span>
             </h1>
         </div>
-        <div class="flex flex-col gap-1 p-3 text-left text-gray-600">
+        <div class="flex flex-col gap-y-3 p-3 text-left text-base text-gray-700">
             <p>
                 Hi, my name is Carlos Miguel, I'm 18 years old and for the past
                 half year I've been learning programming self-taught from online
@@ -105,8 +105,8 @@ const learnedSkills: SkillData[] = [
             </p>
         </div>
         <div class="flex flex-col p-3 gap-2">
-            <h2 class="font-extrabold text-black">MY SKILLS:</h2>
-            <div class="flex gap-2">
+            <h2 class="font-extrabold text-black border-b-custom-redLight border-b-2 w-fit text-lg">MY SKILLS:</h2>
+            <div class="flex flex-wrap gap-2">
                 {
                     learnedSkills.map((skill) => (
                         <LearnedSkill skillData={skill} />

@@ -21,9 +21,7 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
             >
                 {title}
             </h2>
-            <p
-                class="text-lg font-normal text-gray-500 text-pretty"
-            >
+            <p class="text-lg font-normal text-gray-500 text-pretty">
                 {body}
             </p>
         </div>
@@ -47,27 +45,23 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
                 </a>
             </div>
             {
-                () => {
-                    if (preview) {
-                        return (
-                            <div>
-                                <a
-                                    href={preview}
-                                    target="_blank"
-                                    title="Link to the repository"
-                                    class="text-white bg-primary-700 justify-center inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                                >
-                                    <img
-                                        class="size-5 mr-2"
-                                        src="../../svgs/open_in_new.svg"
-                                        alt="Open in new logo"
-                                    />
-                                    Live preview
-                                </a>
-                            </div>
-                        );
-                    }
-                }
+                preview && (
+                    <div>
+                        <a
+                            href={preview}
+                            target="_blank"
+                            title="Link to the repository"
+                            class="text-white bg-primary-700 justify-center inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                        >
+                            <img
+                                class="size-5 mr-2"
+                                src="../../svgs/open_in_new.svg"
+                                alt="Open in new logo"
+                            />
+                            Live preview
+                        </a>
+                    </div>
+                )
             }
         </div>
     </div>
