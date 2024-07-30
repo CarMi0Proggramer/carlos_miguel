@@ -1,4 +1,12 @@
-<svg class="h-5 w-5 me-2" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+---
+interface Props {
+    className:string
+}
+
+const { className } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione"
     preserveAspectRatio="xMidYMid meet">
     <path d="M2 32c0 5.9 1.7 11.4 4.6 16h50.7c2.9-4.6 4.6-10.1 4.6-16s-1.7-11.4-4.6-16H6.6C3.7 20.6 2 26.1 2 32z"

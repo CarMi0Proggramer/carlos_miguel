@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
-import EN from "../components/flags/en.astro";
+import USA from "../components/flags/usa.astro";
 import ProjectsContainer from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro";
 <Layout title="Projects">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
-            <EN slot="svg" />
+            <USA className="size-5 me-2" slot="svg" />
         </NavbarLanguage>
         <NavbarElement slot="pages" title="Home" href="/" />
         <NavbarElement slot="pages" title="About" href="/about" />
