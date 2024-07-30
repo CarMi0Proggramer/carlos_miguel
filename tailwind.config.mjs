@@ -29,6 +29,9 @@ export default {
                     gray: "#747F7F",
                 },
             },
+            screens: {
+                xs: "400px",
+            },
         },
         fontFamily: {
             body: [

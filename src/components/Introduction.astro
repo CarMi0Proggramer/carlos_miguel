@@ -29,10 +29,10 @@ const { title, body } = Astro.props;
             </div>
             <div class="flex flex-col pb-5 gap-3 text-left text-gray-700">
                 <p class="max-w-xl">{body}</p>
-                <div class="flex flex-row-reverse justify-center gap-x-10">
+                <div class="flex xs:flex-row-reverse xs:justify-center gap-x-6 sm:gap-x-10">
                     <a
                         href="/about"
-                        class="self-start rounded-3xl border-2 border-custom-redLight py-2 pl-2 pr-0"
+                        class="self-start rounded-3xl text-xs sm:text-sm border-2 border-custom-redLight py-2 pl-2 pr-0"
                     >
                         MORE ABOUT ME
                         <span
@@ -48,17 +48,15 @@ const { title, body } = Astro.props;
                         </span>
                     </a>
                     <a
-                        class="self-start rounded-3xl border-2 border-custom-redLight py-2 pl-2 pr-0"
+                    href="" download
+                        class="hidden xs:block self-start text-xs sm:text-sm rounded-3xl border-2 border-custom-redLight py-2 pl-2 pr-0"
                         >DOWNLOAD CV
                         <span
                             class="bg-custom-redLight hover:opacity-95 p-3 rounded-full"
                         >
                             <svg
-                                class="arrow w-5 inline-block fill-white"
-                                height="24px"
+                                class="w-5 inline-block fill-white"
                                 viewBox="0 -960 960 960"
-                                width="24px"
-                                fill="#e8eaed"
                                 ><path
                                     d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"
                                 ></path></svg
