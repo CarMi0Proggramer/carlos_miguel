@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,20 +8,51 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Carlos Miguel's portfolio" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/webp" href="/images/logo.webp" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/webp" href="/images/logo.webp" />
+        <meta name="generator" content={Astro.generator} />
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="Carlos Miguel" />
+        <meta
+            name="description"
+            content="FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:title" content="Carlos Miguel" />
+        <meta
+            property="og:description"
+            content="FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
+        />
+        <meta
+            property="og:image"
+            content="https://metatags.io/images/meta-tags.png"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Carlos Miguel" />
+        <meta
+            property="twitter:description"
+            content="FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
+        />
+        <meta
+            property="twitter:image"
+            content="https://metatags.io/images/meta-tags.png"
+        />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 <style is:global>
-	body {
-		@apply flex flex-col justify-between font-body min-h-dvh overflow-x-hidden bg-gray-200;
-	}
+    body {
+        @apply flex flex-col justify-between font-body min-h-dvh overflow-x-hidden bg-gray-200;
+    }
 </style>
