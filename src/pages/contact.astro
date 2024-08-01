@@ -1,26 +1,26 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
+import Layout from "../layouts/Layout.astro";
 import USA from "../components/flags/usa.astro";
-import ProjectsContainer from "../components/Projects.astro";
+import ContactForm from "../components/Contact.astro";
 ---
 
-<Layout title="Projects">
+<Layout title="Contact">
     <Navbar>
         <NavbarLanguage title="English (US)" slot="language">
             <USA className="size-5 me-2" slot="svg" />
         </NavbarLanguage>
         <NavbarElement slot="pages" title="Home" href="/" />
         <NavbarElement slot="pages" title="About" href="/about" />
+        <NavbarElement slot="pages" title="Projects" href="/projects" />
         <NavbarElement
             slot="pages"
-            title="Projects"
-            href="/projects"
+            title="Contact"
+            href="/contact"
             className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
         />
-        <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
-    <ProjectsContainer />
+    <ContactForm />
 </Layout>

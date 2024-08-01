@@ -5,7 +5,6 @@ import Introduction from "../components/Introduction.astro";
 import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
 import USA from "../components/flags/usa.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Carlos Miguel">
@@ -21,11 +20,11 @@ import Footer from "../components/Footer.astro";
         />
         <NavbarElement slot="pages" title="About" href="/about" />
         <NavbarElement slot="pages" title="Projects" href="/projects" />
+        <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
     <Introduction
         body="I have a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
     />
-    <Footer />
 
     <style>
         body {
