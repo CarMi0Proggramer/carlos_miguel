@@ -7,7 +7,7 @@ import SPAIN from "../../components/flags/spain.astro";
 import ContactForm from "../../components/Contact.astro";
 ---
 
-<Layout title="Contactar" footerOptional={true}>
+<Layout es={true} title="Contactar" footerOptional={true}>
     <Navbar>
         <NavbarLanguage title="Español (ES)" slot="language">
             <SPAIN className="size-5 me-2" slot="svg" />
@@ -22,11 +22,5 @@ import ContactForm from "../../components/Contact.astro";
             className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
         />
     </Navbar>
-    <ContactForm es={true}>
-        <h1 slot="heading"
-                    class="font-bold uppercase mb-4 text-2xl text-black sm:text-3xl border-b-2 border-b-custom-redLight w-fit"
-                >
-                    Ponerse en<span class="text-custom-redLight"> contacto</span>
-                </h1>
-    </ContactForm>
+    <ContactForm es={true} />
 </Layout>

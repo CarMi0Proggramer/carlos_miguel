@@ -4,13 +4,14 @@ import Footer from "../components/Footer.astro";
 interface Props {
     title: string;
     footerOptional?: boolean;
+    es?: boolean;
 }
 
-const { title, footerOptional } = Astro.props;
+const { title, footerOptional, es } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={es ? "es" : "en"}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -29,7 +30,9 @@ const { title, footerOptional } = Astro.props;
         <meta property="og:title" content="Carlos Miguel" />
         <meta
             property="og:description"
-            content="FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
+            content={es
+                ? "Desarrollador Web FullStack una profunda pasión por la programación y una habilidad para resolver desafíos complejos. Desde crear experiencias atractivas en el front-end hasta construir sistemas robustos en el back-end, me encanta cada aspecto del proceso de desarrollo."
+                : "FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."}
         />
         <meta property="og:image" content="/images/metatag-img.png" />
 
@@ -42,14 +45,16 @@ const { title, footerOptional } = Astro.props;
         <meta property="twitter:title" content="Carlos Miguel" />
         <meta
             property="twitter:description"
-            content="FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."
+            content={es
+                ? "Desarrollador Web FullStack una profunda pasión por la programación y una habilidad para resolver desafíos complejos. Desde crear experiencias atractivas en el front-end hasta construir sistemas robustos en el back-end, me encanta cada aspecto del proceso de desarrollo."
+                : "FullStack Web Developer with a deep passion for programming and a knack for solving complex challenges. From crafting engaging front-end experiences to building robust back-end systems, I love every aspect of the development process."}
         />
         <meta property="twitter:image" content="/images/metatag-img.png" />
         <title>{title}</title>
     </head>
     <body>
         <slot />
-        {!footerOptional && <Footer />}
+        {!footerOptional && <Footer es={es} />}
     </body>
 </html>
 <style is:global>

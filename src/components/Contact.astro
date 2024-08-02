@@ -12,7 +12,15 @@ const { es } = Astro.props;
     <section class="body-font relative bg-gray-200 text-gray-700">
         <div class="container mx-auto px-5 py-24">
             <div class="mb-12 flex w-full flex-col text-center items-center">
-                <slot name="heading" />
+                <h1
+                    class="font-bold uppercase mb-4 text-2xl text-black sm:text-3xl border-b-2 border-b-custom-redLight w-fit"
+                >
+                    {es ? "Ponerse en" : "Get in"}<span
+                        class="text-custom-redLight"
+                    >
+                        {es ? "contacto" : "touch"}</span
+                    >
+                </h1>
                 <p class="mx-auto text-base leading-relaxed lg:w-2/3">
                     {
                         es

@@ -1,12 +1,18 @@
 ---
 import FooterSocialMediaLink from "./FooterSocialMediaLink.astro";
+
+interface Props {
+    es?: boolean
+}
+
+const { es } = Astro.props;
 ---
 
 <footer
     class="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 antialiased"
 >
     <p class="mb-4 text-sm text-center text-gray-600 sm:mb-0">
-        &copy; 2024 Built with: <a
+        &copy; 2024 {es ? "Construido con": "Built with"}: <a
             href="https://astro.build"
             target="_blank"
             class="hover:underline">Astro</a

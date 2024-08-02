@@ -52,19 +52,98 @@ const learnedSkills: SkillData[] = [
     },
 ];
 
+interface Props {
+    es?: boolean;
+}
 
+const { es } = Astro.props;
 ---
 
 <main class="flex-1 flex flex-col items-center justify-center">
     <section class="mt-5 gap-4 max-w-screen-lg sm:w-3/4 px-4 sm:px-0">
         <div class="flex w-full justify-center">
-            <slot name="heading" />
+            <h1
+                slot="heading"
+                class="text-3xl font-extrabold border-b-2 border-custom-redLight w-fit"
+            >
+                {es ? "SOBRE" : "ABOUT"}
+                <span class="text-custom-redLight">{es ? "MÍ" : "ME"}</span>
+            </h1>
         </div>
-        <div class="flex flex-col gap-y-3 p-3 text-left text-base text-gray-700">
-            <slot name="text" />
+        <div
+            class="flex flex-col gap-y-3 p-3 text-left text-base text-gray-700"
+        >
+            <p>
+                {
+                    es
+                        ? `Mi nombre es Carlos Miguel Garcés Basulto, tengo 18 años, y he
+            estado desarrollando sitios web escalables, comenzando con
+            tecnologías básicas como HTML, CSS y JavaScript, hasta herramientas
+            más avanzadas como `
+                        : `My name is Carlos Miguel Garcés Basulto, I'm 18 years old, and I’ve
+                been developing scalable websites, starting from basic technologies
+                like HTML, CSS, and JavaScript, to more advanced tools like `
+                }
+                <span class="text-custom-redLight"
+                    >Node.js, TypeScript, {es ? "y" : "and"} TailwindCSS</span
+                >.
+            </p>
+            <p>
+                {
+                    es
+                        ? "Tengo experiencia en el desarrollo de "
+                        : "I have experience in developing "
+                }
+                <span class="text-custom-redLight"
+                    >{
+                        es
+                            ? "APIs RESTful utilizando la arquitectura MVC"
+                            : "RESTful APIs using the MVC architecture"
+                    }</span
+                >, {es ? "como se destaca en" : "as highlighted in"}
+                <a
+                    class="underline text-custom-redLight"
+                    href={es ? "/es/projects" : "/projects"}
+                    >{es ? "mi sección de proyectos" : "my project section"}</a
+                >. {
+                    es
+                        ? `Soy conocido por ser una persona que aprende muy rápido y se
+            adapta rápidamente a entornos dinámicos.`
+                        : `I'm known for being a fast learner who adapts quickly to
+                dynamic environments.`
+                }
+            </p>
+            <p>
+                {
+                    es
+                        ? `Si estás interesado en colaborar o en aprender más sobre mi trabajo,
+            no dudes en contactarme en `
+                        : `If you're interested in collaborating or learning more about my
+                work, feel free to contact me at `
+                }
+                <a
+                    href="mailto:carlosmiguelgarcesbasulto@gmail.com"
+                    target="_blank"
+                    class="text-custom-redLight underline"
+                    >carlosmiguelgarcesbasulto@gmail.com</a
+                >
+                {es ? "o conectar conmigo en" : "or connect with me on"}
+                <a
+                    href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D"
+                    target="_blank"
+                    class="text-custom-redLight underline">LinkedIn</a
+                >.
+            </p>
         </div>
         <div class="flex flex-col p-3 gap-2 items-center">
-            <slot name="skill_heading"/>
+            <h2
+                class="font-extrabold text-black border-b-custom-redLight border-b-2 w-fit text-3xl"
+            >
+                {es ? "MIS" : "MY"}
+                <span class="text-custom-redLight"
+                    >{es ? "HABILIDADES" : "SKILLS"}</span
+                >
+            </h2>
             <div class="flex flex-wrap gap-2">
                 {
                     learnedSkills.map((skill) => (

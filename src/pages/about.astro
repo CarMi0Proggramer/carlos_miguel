@@ -22,49 +22,5 @@ import AboutMe from "../components/About.astro";
         <NavbarElement slot="pages" title="Projects" href="/projects" />
         <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
-    <AboutMe>
-        <h1
-            slot="heading"
-            class="text-3xl font-extrabold border-b-2 border-custom-redLight w-fit"
-        >
-            ABOUT <span class="text-custom-redLight">ME</span>
-        </h1>
-        <p slot="text">
-            My name is Carlos Miguel Garcés Basulto, I'm 18 years old, and I’ve
-            been developing scalable websites, starting from basic technologies
-            like HTML, CSS, and JavaScript, to more advanced tools like <span
-                class="text-custom-redLight"
-                >Node.js, TypeScript, and TailwindCSS</span
-            >.
-        </p>
-        <p slot="text">
-            I have experience in developing <span class="text-custom-redLight"
-                >RESTful APIs using the MVC architecture</span
-            >, as highlighted in <a
-                class="underline text-custom-redLight"
-                href="/projects">my project section</a
-            >. I'm known for being a fast learner who adapts quickly to dynamic
-            environments.
-        </p>
-        <p slot="text">
-            If you're interested in collaborating or learning more about my
-            work, feel free to contact me at <a
-                href="mailto:carlosmiguelgarcesbasulto@gmail.com"
-                target="_blank"
-                class="text-custom-redLight underline"
-                >carlosmiguelgarcesbasulto@gmail.com</a
-            > or connect with me on <a
-                href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D"
-                target="_blank"
-                class="text-custom-redLight underline">LinkedIn</a
-            >.
-        </p>
-
-        <h2
-            slot="skill_heading"
-            class="font-extrabold text-black border-b-custom-redLight border-b-2 w-fit text-3xl"
-        >
-            MY <span class="text-custom-redLight">SKILLS</span>
-        </h2>
-    </AboutMe>
+    <AboutMe />
 </Layout>
