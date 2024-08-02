@@ -22,5 +22,11 @@ import ContactForm from "../../components/Contact.astro";
             className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
         />
     </Navbar>
-    <ContactForm />
+    <ContactForm es={true}>
+        <h1 slot="heading"
+                    class="font-bold uppercase mb-4 text-2xl text-black sm:text-3xl border-b-2 border-b-custom-redLight w-fit"
+                >
+                    Ponerse en<span class="text-custom-redLight"> contacto</span>
+                </h1>
+    </ContactForm>
 </Layout>
