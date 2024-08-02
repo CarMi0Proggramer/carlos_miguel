@@ -35,7 +35,9 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
                 <a
                     href={repository}
                     target="_blank"
-                    title="Link to the repository"
+                    title={es
+                        ? "Link al repositorio"
+                        : "Link to the repository"}
                     class="text-white bg-black justify-center inline-flex items-center focus:ring-4 focus:outline-none focus:ring-black focus:ring-opacity-80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                     <img
@@ -52,13 +54,15 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
                         <a
                             href={preview}
                             target="_blank"
-                            title="Link to the repository"
+                            title={
+                                es ? "Link al sitio web" : "Link to the website"
+                            }
                             class="text-white bg-primary-700 justify-center inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                         >
                             <img
                                 class="size-5 mr-2"
                                 src="../../svgs/open_in_new.svg"
-                                alt="Open in new logo"
+                                alt="Open in new window"
                             />
                             {es ? "Vista previa" : "Live preview"}
                         </a>

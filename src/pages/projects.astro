@@ -5,95 +5,6 @@ import NavbarElement from "../components/NavbarElement.astro";
 import NavbarLanguage from "../components/NavbarLanguage.astro";
 import USA from "../components/flags/usa.astro";
 import ProjectsContainer from "../components/Projects.astro";
-
-const PROJECTS: Project[] = [
-    {
-        title: "D-Kanto | E-commerce",
-        body: "This is an e-commerce website developed from scratch by me. I made it with a lot of patience and dedication using best practices and clean code rules. I developed a pagination method so the user can see the products in a more comfortable way. Here, if users are not signed in then they can't execute their payment. I also added light and dark theme.",
-        image: "/images/d-kanto-frontend.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto",
-        preview: "https://d-kanto.onrender.com",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Vite.js",
-                path: "/svgs/Vite.js.svg",
-            },
-            {
-                name: "TailwindCSS",
-                path: "/svgs/tailwindcss.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-            {
-                name: "Stripe",
-                path: "/svgs/stripe.svg",
-            },
-        ],
-    },
-    {
-        title: "D-Kanto Admins | Admin Dashboard",
-        body: "Admin Dashboard created to manage the products of D-Kanto's website. In this project admins can create, update, delete, look for and filter the products. It also have a pagination method and light and dark theme. What I liked the most of developing this site was to create the preview of the products.",
-        image: "/images/d-kanto-admin.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto-admin",
-        preview: "https://d-kanto-admin.onrender.com",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Vite.js",
-                path: "/svgs/Vite.js.svg",
-            },
-            {
-                name: "TailwindCSS",
-                path: "/svgs/tailwindcss.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-        ],
-    },
-    {
-        title: "API for D-Kanto and D-Kanto Admins",
-        body: "RESTful API developed following the Software Architecture pattern MVC ( Model - View - Controller ). I used TypeORM to manage the interactions with a PostgreSQL database and I also handled JWTs ( JSON Web Tokens ) to authorize payments, register and login. I handled the payment endpoints using Stripe and validating data with the library Zod.",
-        image: "/images/d-kanto-backend.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto-backend",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Express.js",
-                path: "/svgs/express.svg",
-            },
-            {
-                name: "PostgreSQL",
-                path: "/svgs/postgresql.svg",
-            },
-            {
-                name: "TypeORM",
-                path: "/svgs/typeorm.svg",
-            },
-            {
-                name: "Stripe",
-                path: "/svgs/stripe.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-        ],
-    },
-];
 ---
 
 <Layout title="Projects">
@@ -111,14 +22,5 @@ const PROJECTS: Project[] = [
         />
         <NavbarElement slot="pages" title="Contact" href="/contact" />
     </Navbar>
-    <ProjectsContainer projects={PROJECTS}>
-        <h2
-            class="text-3xl font-extrabold leading-tight tracking-tight border-b-custom-redLight border-b-2 w-fit"
-        >
-            MY <span class="text-custom-redLight">WORK</span>
-        </h2>
-        <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl">
-            These are the projects I'm proud the most.
-        </p>
-    </ProjectsContainer>
+    <ProjectsContainer />
 </Layout>

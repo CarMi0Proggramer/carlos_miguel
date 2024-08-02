@@ -5,95 +5,6 @@ import NavbarElement from "../../components/NavbarElement.astro";
 import NavbarLanguage from "../../components/NavbarLanguage.astro";
 import SPAIN from "../../components/flags/spain.astro";
 import ProjectsContainer from "../../components/Projects.astro";
-
-const PROJECTS: Project[] = [
-    {
-        title: "D-Kanto | E-commerce",
-        body: "Este es un sitio web de comercio electrónico desarrollado desde cero por mí. Lo hice con mucha paciencia y dedicación, utilizando las mejores prácticas y reglas de código limpio. Desarrollé un método de paginación para que el usuario pueda ver los productos de una manera más cómoda. Aquí, si los usuarios no han iniciado sesión, no pueden realizar su pago. También añadí un tema claro y oscuro.",
-        image: "/images/d-kanto-frontend.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto",
-        preview: "https://d-kanto.onrender.com",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Vite.js",
-                path: "/svgs/Vite.js.svg",
-            },
-            {
-                name: "TailwindCSS",
-                path: "/svgs/tailwindcss.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-            {
-                name: "Stripe",
-                path: "/svgs/stripe.svg",
-            },
-        ],
-    },
-    {
-        title: "D-Kanto Admins | Admin Dashboard",
-        body: "Panel de Administración creado para gestionar los productos del sitio web de D-Kanto. En este proyecto, los administradores pueden crear, actualizar, eliminar, buscar y filtrar los productos. También tiene un método de paginación y un tema claro y oscuro. Lo que más me gustó de desarrollar este sitio fue crear la previsualización de los productos.",
-        image: "/images/d-kanto-admin.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto-admin",
-        preview: "https://d-kanto-admin.onrender.com",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Vite.js",
-                path: "/svgs/Vite.js.svg",
-            },
-            {
-                name: "TailwindCSS",
-                path: "/svgs/tailwindcss.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-        ],
-    },
-    {
-        title: "API para D-Kanto y D-Kanto Admins",
-        body: "API RESTful desarrollada siguiendo el patrón de Arquitectura de Software MVC (Modelo - Vista - Controlador). Utilicé TypeORM para gestionar las interacciones con una base de datos PostgreSQL y también manejé JWTs (JSON Web Tokens) para autorizar pagos, registros e inicios de sesión. Gestioné los endpoints de pago utilizando Stripe y validé los datos con la biblioteca Zod.",
-        image: "/images/d-kanto-backend.webp",
-        repository: "https://github.com/CarMi0Proggramer/d-kanto-backend",
-        skills: [
-            {
-                name: "TypeScript",
-                path: "/svgs/typescript.svg",
-            },
-            {
-                name: "Express.js",
-                path: "/svgs/express.svg",
-            },
-            {
-                name: "PostgreSQL",
-                path: "/svgs/postgresql.svg",
-            },
-            {
-                name: "TypeORM",
-                path: "/svgs/typeorm.svg",
-            },
-            {
-                name: "Stripe",
-                path: "/svgs/stripe.svg",
-            },
-            {
-                name: "Git",
-                path: "/svgs/Git.svg",
-            },
-        ],
-    },
-];
 ---
 
 <Layout es={true} title="Proyectos">
@@ -111,14 +22,5 @@ const PROJECTS: Project[] = [
         />
         <NavbarElement slot="pages" title="Contactar" href="/es/contact" />
     </Navbar>
-    <ProjectsContainer es={true} projects={PROJECTS}>
-        <h2
-            class="text-3xl font-extrabold leading-tight tracking-tight border-b-custom-redLight border-b-2 w-fit"
-        >
-            MI <span class="text-custom-redLight">TRABAJO</span>
-        </h2>
-        <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl">
-            Estos son los proyectos de los que más orgulloso estoy.
-        </p>
-    </ProjectsContainer>
+    <ProjectsContainer es={true} />
 </Layout>

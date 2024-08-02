@@ -2,11 +2,107 @@
 import ProjectCard from "./ProjectCard.astro";
 
 interface Props {
-    projects: Project[];
     es?: boolean;
 }
 
-const { projects, es } = Astro.props;
+const { es } = Astro.props;
+
+const PROJECTS: Project[] = [
+    {
+        title: "D-Kanto | E-commerce",
+        body: es
+            ? "Este es un sitio web de comercio electrónico desarrollado desde cero por mí. Lo hice con mucha paciencia y dedicación, utilizando las mejores prácticas y reglas de código limpio. Desarrollé un método de paginación para que el usuario pueda ver los productos de una manera más cómoda. Aquí, si los usuarios no han iniciado sesión, no pueden realizar su pago. También añadí un tema claro y oscuro."
+            : "This is an e-commerce website developed from scratch by me. I made it with a lot of patience and dedication using best practices and clean code rules. I developed a pagination method so the user can see the products in a more comfortable way. Here, if users are not signed in then they can't execute their payment. I also added light and dark theme.",
+        image: "/images/d-kanto-frontend.webp",
+        repository: "https://github.com/CarMi0Proggramer/d-kanto",
+        preview: "https://d-kanto.onrender.com",
+        skills: [
+            {
+                name: "TypeScript",
+                path: "/svgs/typescript.svg",
+            },
+            {
+                name: "Vite.js",
+                path: "/svgs/Vite.js.svg",
+            },
+            {
+                name: "TailwindCSS",
+                path: "/svgs/tailwindcss.svg",
+            },
+            {
+                name: "Git",
+                path: "/svgs/Git.svg",
+            },
+            {
+                name: "Stripe",
+                path: "/svgs/stripe.svg",
+            },
+        ],
+    },
+    {
+        title: "D-Kanto Admins | Admin Dashboard",
+        body: es
+            ? "Panel de Administración creado para gestionar los productos del sitio web de D-Kanto. En este proyecto, los administradores pueden crear, actualizar, eliminar, buscar y filtrar los productos. También tiene un método de paginación y un tema claro y oscuro. Lo que más me gustó de desarrollar este sitio fue crear la previsualización de los productos."
+            : "Admin Dashboard created to manage the products of D-Kanto's website. In this project admins can create, update, delete, look for and filter the products. It also have a pagination method and light and dark theme. What I liked the most of developing this site was to create the preview of the products.",
+        image: "/images/d-kanto-admin.webp",
+        repository: "https://github.com/CarMi0Proggramer/d-kanto-admin",
+        preview: "https://d-kanto-admin.onrender.com",
+        skills: [
+            {
+                name: "TypeScript",
+                path: "/svgs/typescript.svg",
+            },
+            {
+                name: "Vite.js",
+                path: "/svgs/Vite.js.svg",
+            },
+            {
+                name: "TailwindCSS",
+                path: "/svgs/tailwindcss.svg",
+            },
+            {
+                name: "Git",
+                path: "/svgs/Git.svg",
+            },
+        ],
+    },
+    {
+        title: es
+            ? "API para D-Kanto y D-Kanto Admins"
+            : "API for D-Kanto and D-Kanto Admins",
+        body: es
+            ? "API RESTful desarrollada siguiendo el patrón de Arquitectura de Software MVC (Modelo - Vista - Controlador). Utilicé TypeORM para gestionar las interacciones con una base de datos PostgreSQL y también manejé JWTs (JSON Web Tokens) para autorizar pagos, registros e inicios de sesión. Gestioné los endpoints de pago utilizando Stripe y validé los datos con la biblioteca Zod."
+            : "RESTful API developed following the Software Architecture pattern MVC ( Model - View - Controller ). I used TypeORM to manage the interactions with a PostgreSQL database and I also handled JWTs ( JSON Web Tokens ) to authorize payments, register and login. I handled the payment endpoints using Stripe and validating data with the library Zod.",
+        image: "/images/d-kanto-backend.webp",
+        repository: "https://github.com/CarMi0Proggramer/d-kanto-backend",
+        skills: [
+            {
+                name: "TypeScript",
+                path: "/svgs/typescript.svg",
+            },
+            {
+                name: "Express.js",
+                path: "/svgs/express.svg",
+            },
+            {
+                name: "PostgreSQL",
+                path: "/svgs/postgresql.svg",
+            },
+            {
+                name: "TypeORM",
+                path: "/svgs/typeorm.svg",
+            },
+            {
+                name: "Stripe",
+                path: "/svgs/stripe.svg",
+            },
+            {
+                name: "Git",
+                path: "/svgs/Git.svg",
+            },
+        ],
+    },
+];
 ---
 
 <main class="m-auto">
@@ -15,13 +111,31 @@ const { projects, es } = Astro.props;
             class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24 flex flex-col items-center"
         >
             <div class="max-w-2xl flex flex-col items-center">
-                <slot />
+                <h2
+                    class="text-3xl font-extrabold leading-tight tracking-tight border-b-custom-redLight border-b-2 w-fit"
+                >
+                    {es ? "MI" : "MY"}
+                    <span class="text-custom-redLight"
+                        >{es ? "TRABAJO" : "WORK"}</span
+                    >
+                </h2>
+                <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl">
+                    {
+                        es
+                            ? "Estos son los proyectos de los que más orgulloso estoy."
+                            : "These are the projects I'm proud the most."
+                    }
+                </p>
             </div>
 
             <div
                 class="grid grid-cols-1 mt-12 place-content-center sm:mt-16 gap-x-20 gap-y-12"
             >
-                {projects.map((project) => <ProjectCard es={es} project={project} />)}
+                {
+                    PROJECTS.map((project) => (
+                        <ProjectCard es={es} project={project} />
+                    ))
+                }
             </div>
         </div>
     </section>
