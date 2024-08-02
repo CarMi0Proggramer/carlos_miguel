@@ -1,0 +1,26 @@
+---
+import Navbar from "../../components/Navbar.astro";
+import NavbarElement from "../../components/NavbarElement.astro";
+import NavbarLanguage from "../../components/NavbarLanguage.astro";
+import Layout from "../../layouts/Layout.astro";
+import SPAIN from "../../components/flags/spain.astro";
+import ContactForm from "../../components/Contact.astro";
+---
+
+<Layout title="Contactar" footerOptional={true}>
+    <Navbar>
+        <NavbarLanguage title="Español (ES)" slot="language">
+            <SPAIN className="size-5 me-2" slot="svg" />
+        </NavbarLanguage>
+        <NavbarElement slot="pages" title="Inicio" href="/es/" />
+        <NavbarElement slot="pages" title="Sobre mí" href="/es/about" />
+        <NavbarElement slot="pages" title="Proyectos" href="/es/projects" />
+        <NavbarElement
+            slot="pages"
+            title="Contactar"
+            href="/es/contact"
+            className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
+        />
+    </Navbar>
+    <ContactForm />
+</Layout>

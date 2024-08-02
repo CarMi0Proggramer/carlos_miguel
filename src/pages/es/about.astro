@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import NavbarElement from "../../components/NavbarElement.astro";
+import NavbarLanguage from "../../components/NavbarLanguage.astro";
+import SPAIN from "../../components/flags/spain.astro";
+import AboutMe from "../../components/About.astro";
+---
+
+<Layout title="Sobre mí">
+    <Navbar>
+        <NavbarLanguage title="Español (ES)" slot="language">
+            <SPAIN className="size-5 me-2" slot="svg" />
+        </NavbarLanguage>
+        <NavbarElement slot="pages" title="Inicio" href="/es/" />
+        <NavbarElement
+            slot="pages"
+            title="Sobre mí"
+            href="/es/about"
+            className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
+        />
+        <NavbarElement slot="pages" title="Proyectos" href="/es/projects" />
+        <NavbarElement slot="pages" title="Contactar" href="/es/contact" />
+    </Navbar>
+    <AboutMe>
+        <h1
+            slot="heading"
+            class="text-3xl font-extrabold border-b-2 border-custom-redLight w-fit"
+        >
+            SOBRE <span class="text-custom-redLight">MÍ</span>
+        </h1>
+
+        ```html
+        <p slot="text">
+            Mi nombre es Carlos Miguel Garcés Basulto, tengo 18 años, y he
+            estado desarrollando sitios web escalables, comenzando con
+            tecnologías básicas como HTML, CSS y JavaScript, hasta herramientas
+            más avanzadas como <span class="text-custom-redLight"
+                >Node.js, TypeScript y TailwindCSS</span
+            >.
+        </p>
+        <p slot="text">
+            Tengo experiencia en el desarrollo de <span
+                class="text-custom-redLight"
+                >APIs RESTful utilizando la arquitectura MVC</span
+            >, como se destaca en <a
+                class="underline text-custom-redLight"
+                href="/projects">mi sección de proyectos</a
+            >. Soy conocido por ser una persona que aprende muy rápido y se
+            adapta rápidamente a entornos dinámicos.
+        </p>
+        <p slot="text">
+            Si estás interesado en colaborar o en aprender más sobre mi trabajo,
+            no dudes en contactarme en <a
+                href="mailto:carlosmiguelgarcesbasulto@gmail.com"
+                target="_blank"
+                class="text-custom-redLight underline"
+                >carlosmiguelgarcesbasulto@gmail.com</a
+            > o conectar conmigo en <a
+                href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D"
+                target="_blank"
+                class="text-custom-redLight underline">LinkedIn</a
+            >.
+        </p>
+
+        <h2
+            slot="skill_heading"
+            class="font-extrabold text-black border-b-custom-redLight border-b-2 w-fit text-3xl"
+        >
+            MIS <span class="text-custom-redLight">HABILIDADES</span>
+        </h2>
+    </AboutMe>
+</Layout>

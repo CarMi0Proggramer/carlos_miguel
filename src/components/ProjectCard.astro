@@ -3,8 +3,10 @@ import ProjectSkill from "./Skill.astro";
 
 interface Props {
     project: Project;
+    es?: boolean;
 }
 
+const { es } = Astro.props;
 const { title, body, image, repository, preview, skills } = Astro.props.project;
 ---
 
@@ -41,7 +43,7 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
                         src="../../svgs/github.svg"
                         alt="Github logo"
                     />
-                    Repository
+                    {es ? "Repositorio" : "Repository"}
                 </a>
             </div>
             {
@@ -58,7 +60,7 @@ const { title, body, image, repository, preview, skills } = Astro.props.project;
                                 src="../../svgs/open_in_new.svg"
                                 alt="Open in new logo"
                             />
-                            Live preview
+                            {es ? "Vista previa" : "Live preview"}
                         </a>
                     </div>
                 )

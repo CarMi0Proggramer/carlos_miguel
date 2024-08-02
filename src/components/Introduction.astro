@@ -1,9 +1,15 @@
 ---
 interface Props {
-    body: string;
+    title: string,
+    subtitle: string,
+    body: string,
+    cv_text: string,
+    cv_link: string,
+    about_text: string,
+    about_link: string,
 }
 
-const { body } = Astro.props;
+const { title, subtitle,body, cv_text, cv_link, about_text, about_link } = Astro.props;
 ---
 
 <main class="flex-1 w-full grid place-content-center p-4">
@@ -23,17 +29,17 @@ const { body } = Astro.props;
             <div
                 class="flex flex-col items-center text-2xl lg:text-2xl text-custom-redLight"
             >
-                <h1 class="font-bold">I'M CARLOS MIGUEL</h1>
-                <h2 class="text-black font-semibold text-base">FULLSTACK DEVELOPER</h2>
+                <h1 class="font-bold">{title}</h1>
+                <h2 class="text-black font-semibold text-base">{subtitle}</h2>
             </div>
             <div class="flex flex-col pb-8 gap-3 text-left text-gray-700">
                 <p class="max-w-xl">{body}</p>
                 <div class="flex xs:flex-row-reverse xs:justify-center gap-x-6 sm:gap-x-10">
                     <a
-                        href="/about"
+                        href={about_link}
                         class="self-start rounded-3xl text-xs sm:text-sm border-2 border-custom-redLight py-2 pl-2 pr-0"
                     >
-                        MORE ABOUT ME
+                        {about_text}
                         <span
                             class="arrow-container bg-custom-redLight hover:opacity-95 p-3 rounded-full"
                         >
@@ -47,9 +53,9 @@ const { body } = Astro.props;
                         </span>
                     </a>
                     <a
-                    href="" download
+                    href={cv_link} download
                         class="hidden xs:block self-start text-xs sm:text-sm rounded-3xl border-2 border-custom-redLight py-2 pl-2 pr-0"
-                        >DOWNLOAD CV
+                        >{cv_text}
                         <span
                             class="bg-custom-redLight hover:opacity-95 p-3 rounded-full"
                         >

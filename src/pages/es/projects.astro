@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import NavbarElement from "../components/NavbarElement.astro";
-import NavbarLanguage from "../components/NavbarLanguage.astro";
-import USA from "../components/flags/usa.astro";
-import ProjectsContainer from "../components/Projects.astro";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import NavbarElement from "../../components/NavbarElement.astro";
+import NavbarLanguage from "../../components/NavbarLanguage.astro";
+import SPAIN from "../../components/flags/spain.astro";
+import ProjectsContainer from "../../components/Projects.astro";
 
 const PROJECTS: Project[] = [
     {
         title: "D-Kanto | E-commerce",
-        body: "This is an e-commerce website developed from scratch by me. I made it with a lot of patience and dedication using best practices and clean code rules. I developed a pagination method so the user can see the products in a more comfortable way. Here, if users are not signed in then they can't execute their payment. I also added light and dark theme.",
+        body: "Este es un sitio web de comercio electrónico desarrollado desde cero por mí. Lo hice con mucha paciencia y dedicación, utilizando las mejores prácticas y reglas de código limpio. Desarrollé un método de paginación para que el usuario pueda ver los productos de una manera más cómoda. Aquí, si los usuarios no han iniciado sesión, no pueden realizar su pago. También añadí un tema claro y oscuro.",
         image: "/images/d-kanto-frontend.webp",
         repository: "https://github.com/CarMi0Proggramer/d-kanto",
         preview: "https://d-kanto.onrender.com",
@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
     },
     {
         title: "D-Kanto Admins | Admin Dashboard",
-        body: "Admin Dashboard created to manage the products of D-Kanto's website. In this project admins can create, update, delete, look for and filter the products. It also have a pagination method and light and dark theme. What I liked the most of developing this site was to create the preview of the products.",
+        body: "Panel de Administración creado para gestionar los productos del sitio web de D-Kanto. En este proyecto, los administradores pueden crear, actualizar, eliminar, buscar y filtrar los productos. También tiene un método de paginación y un tema claro y oscuro. Lo que más me gustó de desarrollar este sitio fue crear la previsualización de los productos.",
         image: "/images/d-kanto-admin.webp",
         repository: "https://github.com/CarMi0Proggramer/d-kanto-admin",
         preview: "https://d-kanto-admin.onrender.com",
@@ -62,8 +62,8 @@ const PROJECTS: Project[] = [
         ],
     },
     {
-        title: "API for D-Kanto and D-Kanto Admins",
-        body: "RESTful API developed following the Software Architecture pattern MVC ( Model - View - Controller ). I used TypeORM to manage the interactions with a PostgreSQL database and I also handled JWTs ( JSON Web Tokens ) to authorize payments, register and login. I handled the payment endpoints using Stripe and validating data with the library Zod.",
+        title: "API para D-Kanto y D-Kanto Admins",
+        body: "API RESTful desarrollada siguiendo el patrón de Arquitectura de Software MVC (Modelo - Vista - Controlador). Utilicé TypeORM para gestionar las interacciones con una base de datos PostgreSQL y también manejé JWTs (JSON Web Tokens) para autorizar pagos, registros e inicios de sesión. Gestioné los endpoints de pago utilizando Stripe y validé los datos con la biblioteca Zod.",
         image: "/images/d-kanto-backend.webp",
         repository: "https://github.com/CarMi0Proggramer/d-kanto-backend",
         skills: [
@@ -96,29 +96,29 @@ const PROJECTS: Project[] = [
 ];
 ---
 
-<Layout title="Projects">
+<Layout title="Proyectos">
     <Navbar>
-        <NavbarLanguage title="English (US)" slot="language">
-            <USA className="size-5 me-2" slot="svg" />
+        <NavbarLanguage title="Español (ES)" slot="language">
+            <SPAIN className="size-5 me-2" slot="svg" />
         </NavbarLanguage>
-        <NavbarElement slot="pages" title="Home" href="/" />
-        <NavbarElement slot="pages" title="About" href="/about" />
+        <NavbarElement slot="pages" title="Inicio" href="/es/" />
+        <NavbarElement slot="pages" title="Sobre mí" href="/es/about" />
         <NavbarElement
             slot="pages"
-            title="Projects"
-            href="/projects"
+            title="Proyectos"
+            href="/es/projects"
             className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
         />
-        <NavbarElement slot="pages" title="Contact" href="/contact" />
+        <NavbarElement slot="pages" title="Contactar" href="/es/contact" />
     </Navbar>
-    <ProjectsContainer projects={PROJECTS}>
+    <ProjectsContainer es={true} projects={PROJECTS}>
         <h2
             class="text-3xl font-extrabold leading-tight tracking-tight border-b-custom-redLight border-b-2 w-fit"
         >
-            MY <span class="text-custom-redLight">WORK</span>
+            MI <span class="text-custom-redLight">TRABAJO</span>
         </h2>
         <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl">
-            These are the projects I'm proud the most.
+            Estos son los proyectos de los que más orgulloso estoy.
         </p>
     </ProjectsContainer>
 </Layout>

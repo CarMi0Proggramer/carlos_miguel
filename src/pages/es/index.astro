@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Introduction from "../../components/Introduction.astro";
+import NavbarElement from "../../components/NavbarElement.astro";
+import NavbarLanguage from "../../components/NavbarLanguage.astro";
+import SPAIN from "../../components/flags/spain.astro";
+
+---
+
+<Layout title="Carlos Miguel">
+    <Navbar>
+        <NavbarLanguage title="Español (ES)" slot="language">
+            <SPAIN className="size-5 me-2" slot="svg" />
+        </NavbarLanguage>
+        <NavbarElement
+            slot="pages"
+            title="Inicio"
+            href="/es/"
+            className="block py-2 px-3 text-white bg-custom-redLight rounded md:text-custom-redLight md:bg-transparent md:p-0"
+        />
+        <NavbarElement slot="pages" title="Sobre mí" href="/es/about" />
+        <NavbarElement slot="pages" title="Proyectos" href="/es/projects" />
+        <NavbarElement slot="pages" title="Contactar" href="/es/contact" />
+    </Navbar>
+    <Introduction
+        title="SOY CARLOS MIGUEL"
+        subtitle="DESARROLLADOR FULLSTACK"
+        body="Tengo una profunda pasión por la programación y una habilidad para resolver desafíos complejos. Desde crear experiencias atractivas en el front-end hasta construir sistemas robustos en el back-end, me encanta cada aspecto del proceso de desarrollo."
+        cv_text="DESCARGAR CV"
+        cv_link="/carlos_miguel_es.pdf"
+        about_text="MÁS SOBRE MÍ"
+        about_link="/es/about"
+    />
+</Layout>
