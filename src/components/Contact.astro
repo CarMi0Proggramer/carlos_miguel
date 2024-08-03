@@ -1,5 +1,6 @@
 ---
 import ContactSocialMediaLink from "./ContactSocialMediaLink.astro";
+import { sendEmail } from "../pages/api/send-email";
 
 interface Props {
     es?: boolean;
@@ -35,7 +36,7 @@ const { es } = Astro.props;
 
             <div class="mx-auto md:w-2/3 lg:w-1/2">
                 <!-- form -->
-                <form class="-m-2 flex flex-wrap" method="post">
+                <form id="contact-form"class="-m-2 flex flex-wrap">
                     <div class="w-1/2 p-2">
                         <div class="relative">
                             <input
@@ -85,7 +86,7 @@ const { es } = Astro.props;
                         </div>
                     </div>
                     <div class="w-full p-2">
-                        <button
+                        <button type="submit"
                             class="mx-auto flex rounded border-0 bg-custom-redLight py-2 px-8 text-lg text-white focus:ring-4 focus:outline-none focus:ring-custom-redLight/75"
                             >{es ? "Enviar" : "Send"}</button
                         >
@@ -148,3 +149,12 @@ const { es } = Astro.props;
         </div>
     </section>
 </main>
+<script>
+    const form = document.getElementById("contact-form");
+
+    if (form instanceof HTMLFormElement) {
+        form.addEventListener("submit", async () => {
+            fetch("")
+        })
+    }
+</script>

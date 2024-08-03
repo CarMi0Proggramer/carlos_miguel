@@ -13,3 +13,9 @@ type SkillData = {
     name: string,
     path: string
 }
+
+type SendEmailData = {
+    name: string,
+    email: string,
+    message: string
+}
