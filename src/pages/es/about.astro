@@ -2,16 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import NavbarElement from "../../components/NavbarElement.astro";
-import NavbarLanguage from "../../components/NavbarLanguage.astro";
+import NavbarLanguages from "../../components/NavbarLanguages.astro";
 import SPAIN from "../../components/flags/spain.astro";
 import AboutMe from "../../components/About.astro";
 ---
 
 <Layout es={true} title="Sobre mí">
     <Navbar>
-        <NavbarLanguage title="Español (ES)" slot="language">
+        <NavbarLanguages title="Español (ES)" slot="language">
             <SPAIN className="size-5 me-2" slot="svg" />
-        </NavbarLanguage>
+        </NavbarLanguages>
         <NavbarElement slot="pages" title="Inicio" href="/es/" />
         <NavbarElement
             slot="pages"

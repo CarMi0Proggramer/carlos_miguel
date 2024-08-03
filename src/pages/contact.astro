@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import NavbarElement from "../components/NavbarElement.astro";
-import NavbarLanguage from "../components/NavbarLanguage.astro";
+import NavbarLanguages from "../components/NavbarLanguages.astro";
 import Layout from "../layouts/Layout.astro";
 import USA from "../components/flags/usa.astro";
 import ContactForm from "../components/Contact.astro";
@@ -9,9 +9,9 @@ import ContactForm from "../components/Contact.astro";
 
 <Layout title="Contact" footerOptional={true}>
     <Navbar>
-        <NavbarLanguage title="English (US)" slot="language">
+        <NavbarLanguages title="English (US)" slot="language">
             <USA className="size-5 me-2" slot="svg" />
-        </NavbarLanguage>
+        </NavbarLanguages>
         <NavbarElement slot="pages" title="Home" href="/" />
         <NavbarElement slot="pages" title="About" href="/about" />
         <NavbarElement slot="pages" title="Projects" href="/projects" />

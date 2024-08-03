@@ -3,15 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Introduction from "../components/Introduction.astro";
 import NavbarElement from "../components/NavbarElement.astro";
-import NavbarLanguage from "../components/NavbarLanguage.astro";
+import NavbarLanguages from "../components/NavbarLanguages.astro";
 import USA from "../components/flags/usa.astro";
 ---
 
 <Layout title="Carlos Miguel">
     <Navbar>
-        <NavbarLanguage title="English (US)" slot="language">
+        <NavbarLanguages title="English (US)" slot="language">
             <USA className="size-5 me-2" slot="svg" />
-        </NavbarLanguage>
+        </NavbarLanguages>
         <NavbarElement
             slot="pages"
             title="Home"
