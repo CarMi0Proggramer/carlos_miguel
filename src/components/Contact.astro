@@ -163,11 +163,10 @@ const { es } = Astro.props;
         const formData = new FormData(event.target as HTMLFormElement);
         
         try {
-            const res = await fetch("/api/send-email", {
+            await fetch("/api/send-email", {
                 method: "POST",
                 body: formData,
             });
-            const data = await res.json();
             // clearData()
             // showSuccessMessage()
         } catch (err) {
