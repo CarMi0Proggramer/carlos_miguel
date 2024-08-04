@@ -1,5 +1,7 @@
 import type { APIRoute } from "astro";
-import { transporter } from "../../config/mailer";
+import { Resend } from "resend";
+import { config } from "dotenv";
+config()
 
 export const POST: APIRoute = async ({ request }) => {
     try {
@@ -12,6 +14,7 @@ export const POST: APIRoute = async ({ request }) => {
         
         return new Response(JSON.stringify({ success: true }), { status: 200 });
     } catch (err) {
+        console.log(err);
         return new Response(JSON.stringify({ success: false, err }), {
             status: 500,
         });
@@ -19,9 +22,10 @@ export const POST: APIRoute = async ({ request }) => {
 } 
 
 async function sendEmail(data: SendEmailData) {
-    await transporter.sendMail({
-        from: data.email,
-        to: process.env.MY_EMAIL,
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({
+        from: `${data.email} <onboarding@resend.dev>`,
+        to: process.env.MY_EMAIL as string,
         subject: `Mensaje de ${data.name}`,
         text: data.message,
     });

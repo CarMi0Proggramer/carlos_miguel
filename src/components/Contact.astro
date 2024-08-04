@@ -158,20 +158,23 @@ const { es } = Astro.props;
 <script>
     const form = document.getElementById("contact-form") as HTMLFormElement;
 
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
         const formData = new FormData(event.target as HTMLFormElement);
         
-        try {
-            await fetch("/api/send-email", {
-                method: "POST",
-                body: formData,
-            });
-            // clearData()
-            // showSuccessMessage()
-        } catch (err) {
-            console.log(err);
-            //showErrors()
-        }
+        fetch("/api/send-email", {
+            method: "POST",
+            body: formData,
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                // clearFormInputs()
+                // showSuccessMessage()
+            }else {
+                throw new Error(JSON.stringify(data.err))
+            }
+        })
+        .catch(err => console.log(JSON.parse(err.message)))
     });
 </script>
