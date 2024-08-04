@@ -1,7 +1,5 @@
 ---
 import ContactSocialMediaLink from "./ContactSocialMediaLink.astro";
-import { sendEmail } from "../pages/api/send-email";
-
 interface Props {
     es?: boolean;
 }
@@ -36,7 +34,7 @@ const { es } = Astro.props;
 
             <div class="mx-auto md:w-2/3 lg:w-1/2">
                 <!-- form -->
-                <form id="contact-form"class="-m-2 flex flex-wrap">
+                <form id="contact-form" class="-m-2 flex flex-wrap">
                     <div class="w-1/2 p-2">
                         <div class="relative">
                             <input
@@ -77,7 +75,8 @@ const { es } = Astro.props;
                                 id="message"
                                 name="message"
                                 class="peer h-32 w-full resize-none rounded border border-gray-700 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-900 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-custom-redLight focus:ring-2 focus:ring-custom-redLight"
-                                placeholder="Message" required></textarea>
+                                placeholder="Message"
+                                required></textarea>
                             <label
                                 for="message"
                                 class="absolute left-3 -top-6 bg-transparent text-sm leading-7 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-custom-redLight"
@@ -86,7 +85,8 @@ const { es } = Astro.props;
                         </div>
                     </div>
                     <div class="w-full p-2">
-                        <button type="submit"
+                        <button
+                            type="submit"
                             class="mx-auto flex rounded border-0 bg-custom-redLight py-2 px-8 text-lg text-white focus:ring-4 focus:outline-none focus:ring-custom-redLight/75"
                             >{es ? "Enviar" : "Send"}</button
                         >
@@ -103,7 +103,9 @@ const { es } = Astro.props;
                         >carlosmiguelgarcesbasulto@gmail.com</a
                     >
                     <ul class="flex justify-center items-center mt-4 gap-4">
-                        <ContactSocialMediaLink href="https://www.facebook.com/profile.php?id=100040653894140&mibextid=ZbWKwL">
+                        <ContactSocialMediaLink
+                            href="https://www.facebook.com/profile.php?id=100040653894140&mibextid=ZbWKwL"
+                        >
                             <svg
                                 class="size-5 hover:fill-[#3b5998]"
                                 aria-hidden="true"
@@ -116,7 +118,9 @@ const { es } = Astro.props;
                                     clip-rule="evenodd"></path>
                             </svg>
                         </ContactSocialMediaLink>
-                        <ContactSocialMediaLink href="https://github.com/CarMi0Proggramer">
+                        <ContactSocialMediaLink
+                            href="https://github.com/CarMi0Proggramer"
+                        >
                             <svg
                                 class="size-5 hover:fill-black"
                                 aria-hidden="true"
@@ -129,7 +133,9 @@ const { es } = Astro.props;
                                     clip-rule="evenodd"></path>
                             </svg>
                         </ContactSocialMediaLink>
-                        <ContactSocialMediaLink href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D">
+                        <ContactSocialMediaLink
+                            href="https://www.linkedin.com/in/carlos-miguel-2421972ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FqLi5XXtQcOVVWpvBGxtoQ%3D%3D"
+                        >
                             <svg
                                 class="size-5 hover:fill-primary-600"
                                 width="256"
@@ -150,11 +156,23 @@ const { es } = Astro.props;
     </section>
 </main>
 <script>
-    const form = document.getElementById("contact-form");
+    const form = document.getElementById("contact-form") as HTMLFormElement;
 
-    if (form instanceof HTMLFormElement) {
-        form.addEventListener("submit", async () => {
-            fetch("")
-        })
-    }
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target as HTMLFormElement);
+        
+        try {
+            const res = await fetch("/api/send-email", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await res.json();
+            // clearData()
+            // showSuccessMessage()
+        } catch (err) {
+            console.log(err);
+            //showErrors()
+        }
+    });
 </script>
