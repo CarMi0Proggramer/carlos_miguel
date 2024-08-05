@@ -1,7 +1,7 @@
 ---
 import ContactSocialMediaLink from "./ContactSocialMediaLink.astro";
-import FailedMessageModal from "./FailedMessageModal.astro";
-import SuccessMessageModal from "./SuccessMessageModal.astro";
+import FailedMessageModal from "../modals/FailedMessageModal.astro";
+import SuccessMessageModal from "../modals/SuccessMessageModal.astro";
 
 interface Props {
     es?: boolean;
@@ -162,7 +162,7 @@ const { es } = Astro.props;
     </section>
 </main>
 <script>
-    import { clearFormInputs } from "../utils/clear_form_inputs";
+    import { clearFormInputs } from "../../utils/clear_form_inputs";
 
     const form = document.getElementById("contact-form") as HTMLFormElement;
 
