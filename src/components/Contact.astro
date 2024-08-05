@@ -1,5 +1,7 @@
 ---
 import ContactSocialMediaLink from "./ContactSocialMediaLink.astro";
+import FailedMessageModal from "./FailedMessageModal.astro";
+import SuccessMessageModal from "./SuccessMessageModal.astro";
 
 interface Props {
     es?: boolean;
@@ -26,9 +28,9 @@ const { es } = Astro.props;
                         es
                             ? `¡No dudes en ponerte en contacto conmigo! Ya sea que estés interesado en contratarme para un proyecto, tengas preguntas sobre mis habilidades o quieras discutir posibles colaboraciones, me encantaría saber de ti.`
                             : `Feel free to reach out to me! Whether you're interested in
-                    hiring me for a project, have questions about my skills, or
-                    want to discuss potential collaborations, I'd love to hear
-                    from you.`
+                            hiring me for a project, have questions about my skills, or
+                            want to discuss potential collaborations, I'd love to hear
+                            from you.`
                     }
                 </p>
             </div>
@@ -93,7 +95,10 @@ const { es } = Astro.props;
                         >
                     </div>
                 </form>
-
+                <div class="modals-container">
+                    <SuccessMessageModal es={es}></SuccessMessageModal>
+                    <FailedMessageModal es={es}></FailedMessageModal>  
+                </div>            
                 <!-- footer -->
                 <div
                     class="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center"
@@ -173,9 +178,9 @@ const { es } = Astro.props;
         .then(data => {
             if (data.success) {
                 clearFormInputs(form);
-                // showSuccessMessage()
+                document.getElementById("open-success-modal")?.click()
             }else {
-                // showFailedMessage();
+                document.getElementById("open-failed-modal")?.click()
             }
         })
         .catch(err => console.log(err));

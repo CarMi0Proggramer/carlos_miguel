@@ -1,0 +1,63 @@
+---
+import CloseModalButton from "./CloseModalButton.astro";
+import ModalIcon from "./ModalIcon.astro";
+
+interface Props {
+    es?: boolean;
+}
+
+const { es } = Astro.props;
+---
+
+<button id="open-failed-modal" data-modal-toggle="failedModal" class="hidden"
+    >Open Modal Button</button
+>
+<div
+    id="failedModal"
+    data-modal-target="failedModal"
+    tabindex="-1"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full"
+>
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <!-- Modal content -->
+        <div
+            class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5"
+        >
+            <CloseModalButton id="failedModal" />
+            <ModalIcon
+                name="Failed"
+                className="w-12 h-12 rounded-full bg-custom-redLight dark:bg-red-700 p-2 flex items-center justify-center mx-auto mb-3.5"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="mx-auto text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                </svg>
+            </ModalIcon>
+            <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+                {
+                    es
+                        ? "Parece que algo falló. Vuelve a intentarlo, por favor."
+                        : "It seems that something went wrong. Try again, please."
+                }
+            </p>
+            <button
+                data-modal-toggle="failedModal"
+                type="button"
+                class="py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-custom-redLight/90 hover:bg-custom-redLight focus:ring-4 focus:outline-none focus:ring-custom-redLight/75"
+            >
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
