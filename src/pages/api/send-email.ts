@@ -21,8 +21,8 @@ export const POST: APIRoute = async ({ request }) => {
     }
 } 
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 async function sendEmail(data: SendEmailData) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
         from: `${data.email} <onboarding@resend.dev>`,
         to: process.env.MY_EMAIL as string,

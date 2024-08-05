@@ -1,5 +1,6 @@
 ---
 import ContactSocialMediaLink from "./ContactSocialMediaLink.astro";
+
 interface Props {
     es?: boolean;
 }
@@ -156,6 +157,8 @@ const { es } = Astro.props;
     </section>
 </main>
 <script>
+    import { clearFormInputs } from "../utils/clear_form_inputs";
+
     const form = document.getElementById("contact-form") as HTMLFormElement;
 
     form.addEventListener("submit", (event) => {
@@ -169,12 +172,12 @@ const { es } = Astro.props;
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                // clearFormInputs()
+                clearFormInputs(form);
                 // showSuccessMessage()
             }else {
-                throw new Error(JSON.stringify(data.err))
+                // showFailedMessage();
             }
         })
-        .catch(err => console.log(JSON.parse(err.message)))
+        .catch(err => console.log(err));
     });
 </script>
