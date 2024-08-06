@@ -25,7 +25,7 @@ export default {
                     cyanLight: "#00CCC0",
                     cyanLighter: "#72F2EB",
                     cyanDark: "#1B7F79",
-                    redLight: "#FF4858",
+                    redLight: "#FF3344",
                     gray: "#747F7F",
                 },
             },
