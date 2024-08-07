@@ -3,10 +3,11 @@ import SPAIN from "../flags/spain.astro";
 import USA from "../flags/usa.astro";
 
 interface Props {
-    title: string
+    title: string,
+    pageName: string;
 }
 
-const { title } = Astro.props;
+const { title, pageName } = Astro.props;
 ---
 
 <div
@@ -28,7 +29,7 @@ const { title } = Astro.props;
         <ul class="py-2 font-medium" role="none">
             <li>
                 <a
-                    href="/"
+                    href=`/${pageName}`
                     class="block px-4 py-2 text-sm text-stone-600 hover:bg-gray-100"
                     role="menuitem"
                 >
@@ -40,7 +41,7 @@ const { title } = Astro.props;
             </li>
             <li>
                 <a
-                    href="/es/"
+                    href=`/es/${pageName}`
                     class="block px-4 py-2 text-sm text-stone-600 hover:bg-gray-100"
                     role="menuitem"
                 >
