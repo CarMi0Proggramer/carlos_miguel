@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
     skillData: SkillData
 }
@@ -9,10 +11,13 @@ const id = crypto.randomUUID();
 ---
 
 <div class="hover:bg-slate-300 p-2 hover:rounded-lg grid place-content-center">
-    <img class="size-8 object-contain object-center"
+    <Image class="object-contain object-center"
         data-tooltip-target={id}
         src={path}
         alt="SKill"
+        width="32"
+        height="32"
+        decoding="async"
     />
     <div
         id={id}

@@ -1,20 +1,25 @@
 ---
 import ProjectSkill from "../Skill.astro";
+import { Image } from "astro:assets";
 
 interface Props {
     project: Project;
     es?: boolean;
+    loading: "eager" | "lazy"
 }
 
-const { es } = Astro.props;
+const { es, loading } = Astro.props;
 const { title, body, image, repository, preview, skills } = Astro.props.project;
 ---
 
 <article class="flex max-w-5xl flex-col md:flex-row gap-10 w-full">
-    <img
+    <Image
         class="md:max-w-2xl w-full md:w-[45%] md:self-start object-contain object-center rounded-md"
         src={image}
         alt="Project image"
+        width="10"
+        height="10"
+        loading={loading}
     />
     <div class="flex flex-col items-start gap-3">
         <div class="flex flex-col text-left gap-3">

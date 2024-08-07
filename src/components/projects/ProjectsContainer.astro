@@ -132,9 +132,10 @@ const PROJECTS: Project[] = [
                 class="grid grid-cols-1 mt-12 place-content-center sm:mt-16 gap-x-20 gap-y-12"
             >
                 {
-                    PROJECTS.map((project) => (
-                        <ProjectCard es={es} project={project} />
-                    ))
+                    PROJECTS.map((project,index) => {
+                        let loading: "eager" | "lazy" = index === 0 ? "eager" : "lazy";
+                        return <ProjectCard es={es} project={project} loading={loading} />
+                    })
                 }
             </div>
         </div>
